@@ -4,27 +4,289 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>India's Involvement in International Organizations</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background: #fafafa;
+            color: #2d3436;
+            line-height: 1.6;
+        }
+
+        header {
+            background: white;
+            padding: 1.5rem 5%;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(120deg, #FF9933, #138808);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #2d3436;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(120deg, #FF9933, #138808);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 120px auto 40px;
+            padding: 0 5%;
+        }
+
+        .org-intro {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .org-intro h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(120deg, #FF9933, #138808);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .org-intro p {
+            color: #636e72;
+            font-size: 1.1rem;
+            max-width: 700px;
+        }
+
+        .org-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .org-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .org-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .org-banner {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .un-banner {
+            background: linear-gradient(135deg, #4299e1, #2b6cb0);
+        }
+
+        .wto-banner {
+            background: linear-gradient(135deg, #48bb78, #2f855a);
+        }
+
+        .org-content {
+            padding: 2rem;
+        }
+
+        .org-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2d3436;
+        }
+
+        .org-content p {
+            color: #636e72;
+            margin-bottom: 1.5rem;
+        }
+
+        .org-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-box {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3436;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #636e72;
+            margin-top: 0.3rem;
+        }
+
+        .involvement-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #f1f3f5;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #2d3436;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .org-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .org-intro {
+                padding: 2rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .org-card {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .org-card:nth-child(1) { animation-delay: 0.2s; }
+        .org-card:nth-child(2) { animation-delay: 0.4s; }
+    </style>
 </head>
 <body>
     <header>
-        <h1>India's Involvement in International Organizations</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="countries.html">Countries</a>
-            <a href="regions.html">Regions</a>
-            <a href="organizations.html">Organizations</a>
-        </nav>
+        <div class="header-content">
+            <h1>India's Involvement in International Organizations</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="countries.html">Countries</a>
+                <a href="regions.html">Regions</a>
+                <a href="organizations.html">Organizations</a>
+            </nav>
+        </div>
     </header>
 
-    <section class="organizations">
-        <h2>United Nations (UN)</h2>
-        <p>India is an active member of the United Nations and has held non-permanent membership in the UN Security Council several times.</p>
+    <main>
+        <div class="org-intro">
+            <h2>Global Engagement</h2>
+            <p>India plays a vital role in shaping global policies through its active participation in various international organizations, contributing to worldwide development, peace, and cooperation.</p>
+        </div>
 
-        <h2>World Trade Organization (WTO)</h2>
-        <p>India is a key participant in the WTO, advocating for fair trade practices and supporting developing countries.</p>
+        <div class="org-grid">
+            <article class="org-card">
+                <div class="org-banner un-banner">UN</div>
+                <div class="org-content">
+                    <h2>United Nations (UN)</h2>
+                    <p>India is an active member of the United Nations and has held non-permanent membership in the UN Security Council several times.</p>
+                    <div class="org-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">1945</div>
+                            <div class="stat-label">Member Since</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">UNSC Terms</div>
+                        </div>
+                    </div>
+                    <div class="involvement-tags">
+                        <span class="tag">Peacekeeping</span>
+                        <span class="tag">Security Council</span>
+                        <span class="tag">Climate Action</span>
+                        <span class="tag">Development</span>
+                    </div>
+                </div>
+            </article>
 
-        <!-- Add more organizations as needed -->
-    </section>
+            <article class="org-card">
+                <div class="org-banner wto-banner">WTO</div>
+                <div class="org-content">
+                    <h2>World Trade Organization (WTO)</h2>
+                    <p>India is a key participant in the WTO, advocating for fair trade practices and supporting developing countries.</p>
+                    <div class="org-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">1995</div>
+                            <div class="stat-label">Member Since</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">Top 10</div>
+                            <div class="stat-label">Trading Nation</div>
+                        </div>
+                    </div>
+                    <div class="involvement-tags">
+                        <span class="tag">Trade Policy</span>
+                        <span class="tag">Agriculture</span>
+                        <span class="tag">Services</span>
+                        <span class="tag">Development</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
 </body>
 </html>
