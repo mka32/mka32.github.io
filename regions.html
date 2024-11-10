@@ -4,27 +4,288 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>India's Regional Partnerships</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background: #fafafa;
+            color: #2d3436;
+            line-height: 1.6;
+        }
+
+        header {
+            background: white;
+            padding: 1.5rem 5%;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(120deg, #FF9933, #138808);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #2d3436;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(120deg, #FF9933, #138808);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 120px auto 40px;
+            padding: 0 5%;
+        }
+
+        .region-hero {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .region-hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(120deg, #FF9933, #138808);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .region-hero p {
+            color: #636e72;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+
+        .regions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .region-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .region-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .region-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .south-asia {
+            background: linear-gradient(135deg, #00C9FF, #92FE9D);
+        }
+
+        .indo-pacific {
+            background: linear-gradient(135deg, #1CB5E0, #000851);
+        }
+
+        .region-content {
+            padding: 2rem;
+        }
+
+        .region-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2d3436;
+        }
+
+        .region-card p {
+            color: #636e72;
+            margin-bottom: 1.5rem;
+        }
+
+        .region-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3436;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #636e72;
+        }
+
+        .member-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #f1f3f5;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #2d3436;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .regions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .region-hero {
+                padding: 2rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .region-card {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .region-card:nth-child(1) { animation-delay: 0.2s; }
+        .region-card:nth-child(2) { animation-delay: 0.4s; }
+    </style>
 </head>
 <body>
     <header>
-        <h1>India's Regional Partnerships</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="countries.html">Countries</a>
-            <a href="regions.html">Regions</a>
-            <a href="organizations.html">Organizations</a>
-        </nav>
+        <div class="header-content">
+            <h1>India's Regional Partnerships</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="countries.html">Countries</a>
+                <a href="regions.html">Regions</a>
+                <a href="organizations.html">Organizations</a>
+            </nav>
+        </div>
     </header>
 
-    <section class="regional-partnerships">
-        <h2>South Asia</h2>
-        <p>India actively engages with neighboring South Asian nations through SAARC and BIMSTEC, promoting regional security and trade.</p>
+    <main>
+        <div class="region-hero">
+            <h2>Regional Cooperation</h2>
+            <p>India's regional partnerships form the cornerstone of its foreign policy, fostering cooperation, security, and economic growth across different geographical regions.</p>
+        </div>
 
-        <h2>Indo-Pacific</h2>
-        <p>India’s strategic involvement in the Indo-Pacific region includes cooperation with ASEAN countries, Australia, Japan, and the United States.</p>
+        <div class="regions-grid">
+            <article class="region-card">
+                <div class="region-image south-asia"></div>
+                <div class="region-content">
+                    <h2>South Asia</h2>
+                    <p>India actively engages with neighboring South Asian nations through SAARC and BIMSTEC, promoting regional security and trade.</p>
+                    <div class="region-stats">
+                        <div class="stat">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">Member Countries</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">1.8B</div>
+                            <div class="stat-label">Population</div>
+                        </div>
+                    </div>
+                    <div class="member-tags">
+                        <span class="tag">SAARC</span>
+                        <span class="tag">BIMSTEC</span>
+                        <span class="tag">Trade</span>
+                        <span class="tag">Security</span>
+                    </div>
+                </div>
+            </article>
 
-        <!-- Add more regions as needed -->
-    </section>
+            <article class="region-card">
+                <div class="region-image indo-pacific"></div>
+                <div class="region-content">
+                    <h2>Indo-Pacific</h2>
+                    <p>India's strategic involvement in the Indo-Pacific region includes cooperation with ASEAN countries, Australia, Japan, and the United States.</p>
+                    <div class="region-stats">
+                        <div class="stat">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">QUAD Members</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Partners</div>
+                        </div>
+                    </div>
+                    <div class="member-tags">
+                        <span class="tag">QUAD</span>
+                        <span class="tag">ASEAN</span>
+                        <span class="tag">Maritime</span>
+                        <span class="tag">Security</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
 </body>
 </html>
