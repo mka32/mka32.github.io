@@ -19,9 +19,10 @@ body img {
     max-width: 100%;             /* Ensure the image never exceeds the width of the screen */
     height: auto;                /* Maintain the aspect ratio */
     object-fit: contain;         /* Ensures the image scales without distorting */
+    border-radius: 8px;          /* Add rounded corners to the images */
 }
 
-
+/* Links */
 a {
     text-decoration: none;
     color: inherit;
@@ -54,7 +55,25 @@ header h1 {
     margin-bottom: 15px;
 }
 
-/* Navigation Styles */
+/* Hamburger Icon Styles */
+.hamburger {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+}
+
+.hamburger .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    border-radius: 10px;
+}
+
 /* Navigation Styles */
 header nav ul {
     list-style: none;
@@ -84,50 +103,21 @@ header nav ul li a:hover {
     background-color: #3498db;
 }
 
-
-/* Main Content */
-main {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-section {
-    margin-bottom: 40px;
-}
-
-h2 {
-    font-size: 2rem;
-    color: #2c3e50;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-/* Footer Section */
-footer {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: 40px;
-}
-
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     header .container {
         padding: 0 10px; /* Adjust container padding for mobile */
     }
-
     header h1 {
         font-size: 2rem; /* Adjust header font size */
     }
 
     header nav ul {
+        display: none; /* Hide the navigation links by default */
         padding-left: 0;
+        flex-direction: column; /* Stack the links vertically on mobile */
+        width: 100%;
+        margin-top: 20px;
     }
 
     header nav ul li {
@@ -138,21 +128,46 @@ footer {
         font-size: 1rem; /* Adjust font size for links */
         padding: 12px 20px; /* Add padding to make it more touch-friendly */
     }
+
+    /* Show the hamburger menu */
+    .hamburger {
+        display: flex; /* Show hamburger icon */
+    }
+
+    /* When the menu is active, display the links */
+    header nav ul.active {
+        display: flex;
+    }
+
+    /* Animation for the hamburger icon when active */
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 10px;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -10px;
+    }
 }
 
+/* Very Small Screens */
 @media (max-width: 480px) {
     header .container {
         padding: 0 5px; /* Further adjust container padding for smaller devices */
     }
-
     header h1 {
         font-size: 1.8rem; /* Smaller font size for very small screens */
     }
-
     header nav ul li {
         margin-bottom: 5px; /* Minimize space between links */
     }
-
     header nav ul li a {
         font-size: 0.9rem; /* Smaller text size */
         padding: 10px 15px; /* Adjust padding */
