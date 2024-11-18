@@ -4,6 +4,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: block; /* Makes each link appear on a new line */
+    margin-bottom: 10px; /* Optional: Adds space between links */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333; /* You can customize the color */
+}
 
 body {
     font-family: 'Roboto', sans-serif;
