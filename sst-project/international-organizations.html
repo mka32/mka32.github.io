@@ -9,19 +9,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<script>
-    // Get the hamburger icon and nav links
-    const hamburgerIcon = document.getElementById('hamburger-icon');
-    const navLinks = document.getElementById('nav-links');
 
-    // Add event listener to the hamburger icon
-    hamburgerIcon.addEventListener('click', () => {
-        navLinks.classList.toggle('active'); // Toggle the 'active' class on nav links
-        hamburgerIcon.classList.toggle('active'); // Toggle 'active' class on hamburger icon
-    });
-</script>
-
-    <!-- Header Section -->
+ <!-- Header Section -->
  <header>
     <div class="container">
         <h1>India's Foreign Policies</h1>
@@ -66,6 +55,18 @@
     <footer>
         <p>&copy; 2024 India's Foreign Policies. All rights reserved.</p>
     </footer>
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        // Get the hamburger icon and nav links
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const navLinks = document.getElementById('nav-links');
+
+        // Add event listener to the hamburger icon
+        hamburgerIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active'); // Toggle the 'active' class on nav links
+            hamburgerIcon.classList.toggle('active'); // Toggle 'active' class on hamburger icon
+        });
+    </script>
 
 </body>
 </html>
