@@ -4,21 +4,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-header nav ul li {
-    display: block; /* Makes each link appear on a new line */
-    margin-bottom: 10px; /* Optional: Adds space between links */
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: #333; /* You can customize the color */
-}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -45,7 +30,8 @@ header {
 
 header .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Stack the title and nav for mobile */
+    justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -54,25 +40,37 @@ header .container {
 
 header h1 {
     font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-nav ul {
-    display: flex;
+/* Navigation Styles */
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center; /* Center the navigation links */
 }
 
-nav ul li {
-    margin-left: 20px;
+header nav ul li {
+    display: block; /* Stack the links vertically */
+    margin-bottom: 10px; /* Space between links */
 }
 
-nav ul li a {
+header nav ul li a {
+    text-decoration: none;
+    color: white;
     font-size: 1.1rem;
     font-weight: 500;
-    color: white;
-    transition: color 0.3s;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #34495e;
+    transition: background-color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #3498db;
+header nav ul li a:hover {
+    background-color: #3498db;
 }
 
 /* Main Content */
@@ -104,4 +102,47 @@ footer {
     text-align: center;
     padding: 10px;
     margin-top: 40px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header .container {
+        padding: 0 10px; /* Adjust container padding for mobile */
+    }
+
+    header h1 {
+        font-size: 2rem; /* Adjust header font size */
+    }
+
+    header nav ul {
+        padding-left: 0;
+    }
+
+    header nav ul li {
+        margin-bottom: 8px; /* Reduce space between links on mobile */
+    }
+
+    header nav ul li a {
+        font-size: 1rem; /* Adjust font size for links */
+        padding: 12px 20px; /* Add padding to make it more touch-friendly */
+    }
+}
+
+@media (max-width: 480px) {
+    header .container {
+        padding: 0 5px; /* Further adjust container padding for smaller devices */
+    }
+
+    header h1 {
+        font-size: 1.8rem; /* Smaller font size for very small screens */
+    }
+
+    header nav ul li {
+        margin-bottom: 5px; /* Minimize space between links */
+    }
+
+    header nav ul li a {
+        font-size: 0.9rem; /* Smaller text size */
+        padding: 10px 15px; /* Adjust padding */
+    }
 }
