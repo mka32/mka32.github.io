@@ -17,7 +17,7 @@ const matchesData = [
     },
     {
         id: 2,
-        name: "Riya Patel",
+        name: "Dharmindar Patel",
         age: 25,
         location: "Mumbai",
         caste: "Patel",
@@ -37,6 +37,19 @@ const matchesData = [
         profession: "Business",
         education: "MBA",
         dowry: 3000000,
+        status: "negotiable",
+        lastActive: "3 hours ago",
+        isPremium: true
+    },
+    {
+        id: 4,
+        name: "Murlidhar Swami",
+        age: 22,
+        location: "Rajnagar",
+        caste: "Dalit",
+        profession: "Business",
+        education: "MBA",
+        dowry: 30000000,
         status: "negotiable",
         lastActive: "3 hours ago",
         isPremium: true
