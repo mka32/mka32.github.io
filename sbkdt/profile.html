@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBKDT - Profile</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="images/icon.png" alt="SBKDT Logo" class="app-logo">
+                    <h1>SBKDT</h1>
+                </div>
+                <div class="header-icons">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+            <p class="tagline">Shadi Ka Sahi Hisaab, Dahej Ka Sahi Maamla!</p>
+        </header>
+
+        <main class="app-main">
+            <section class="screen active">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img src="images/profile-placeholder.png" alt="Profile" id="profile-image">
+                        <button class="edit-avatar"><i class="fas fa-camera"></i></button>
+                    </div>
+                    <h2 id="profile-name">Your Profile</h2>
+                </div>
+                
+                <div class="profile-form">
+                    <div class="form-group">
+                        <label>Family Type</label>
+                        <select id="family-type">
+                            <option value="groom">Groom's Family</option>
+                            <option value="bride">Bride's Family</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="full-name" placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input type="number" id="age" placeholder="Enter age">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Caste/Community</label>
+                        <input type="text" id="caste" placeholder="Enter your caste">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Religion</label>
+                        <select id="religion">
+                            <option value="hindu">Hindu</option>
+                            <option value="muslim">Muslim</option>
+                            <option value="christian">Christian</option>
+                            <option value="sikh">Sikh</option>
+                            <option value="jain">Jain</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Profession</label>
+                        <input type="text" id="profession" placeholder="Enter profession">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Education</label>
+                        <input type="text" id="education" placeholder="Highest education">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Expected/Offered Dowry</label>
+                        <div class="dowry-input">
+                            <span>₹</span>
+                            <input type="number" id="dowry" placeholder="Amount in lakhs">
+                            <span>Lakhs</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Negotiation Preferences</label>
+                        <textarea id="preferences" placeholder="Payment terms, asset preferences..."></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button class="btn-save">Save Profile</button>
+                        <button class="btn-cancel">Cancel</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <nav class="bottom-nav">
+    <a href="index.html" class="nav-item">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </a>
+    <a href="matches.html" class="nav-item">
+        <i class="fas fa-heart"></i>
+        <span>Matches</span>
+    </a>
+    <a href="search.html" class="nav-item">
+        <i class="fas fa-search"></i>
+        <span>Search</span>
+    </a>
+    <a href="chat.html" class="nav-item">
+        <i class="fas fa-comments"></i>
+        <span>Chat</span>
+    </a>
+    <a href="profile.html" class="nav-item">
+        <i class="fas fa-user"></i>
+        <span>Profile</span>
+    </a>
+</nav>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

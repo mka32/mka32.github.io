@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBKDT - Chat</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="images/icon.png" alt="SBKDT Logo" class="app-logo">
+                    <h1>SBKDT</h1>
+                </div>
+                <div class="header-icons">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+            <p class="tagline">Shadi Ka Sahi Hisaab, Dahej Ka Sahi Maamla!</p>
+        </header>
+
+        <main class="app-main">
+            <section class="screen active">
+                <div class="chat-header">
+                    <h2>Negotiations</h2>
+                    <button class="btn-primary" id="new-chat">
+                        <i class="fas fa-plus"></i> New Chat
+                    </button>
+                </div>
+                
+                <div class="chat-list">
+                    <!-- Chats will be loaded via JS -->
+                </div>
+            </section>
+        </main>
+
+        <nav class="bottom-nav">
+    <a href="index.html" class="nav-item">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </a>
+    <a href="matches.html" class="nav-item">
+        <i class="fas fa-heart"></i>
+        <span>Matches</span>
+    </a>
+    <a href="search.html" class="nav-item">
+        <i class="fas fa-search"></i>
+        <span>Search</span>
+    </a>
+    <a href="chat.html" class="nav-item">
+        <i class="fas fa-comments"></i>
+        <span>Chat</span>
+    </a>
+    <a href="profile.html" class="nav-item">
+        <i class="fas fa-user"></i>
+        <span>Profile</span>
+    </a>
+</nav>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>
